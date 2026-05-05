@@ -1,3 +1,4 @@
+// v2
 export default async function handler(req, res) {
   const origin = req.headers.origin || '';
   const allowed = origin.endsWith('.github.io') || origin === 'https://marcussteinsvaag-beep.github.io';
