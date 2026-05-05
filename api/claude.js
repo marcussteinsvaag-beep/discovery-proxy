@@ -1,12 +1,8 @@
-// v3
+// v4
 module.exports = async function handler(req, res) {
-  const origin = req.headers.origin || '';
-  const allowed = origin.endsWith('.github.io') || origin === 'https://marcussteinsvaag-beep.github.io';
-  
-  res.setHeader('Access-Control-Allow-Origin', allowed ? origin : 'https://marcussteinsvaag-beep.github.io');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Max-Age', '86400');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).end();
